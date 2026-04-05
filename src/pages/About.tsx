@@ -61,7 +61,7 @@ export default function About() {
           </h2>
           <div className="space-y-6 text-gray-600 leading-relaxed">
             <p>
-              It started in 2024, when a group of engineers and agricultural experts 
+              It started in 2026, when a group of engineers and agricultural experts 
               witnessed the devastating impact of crop diseases and the environmental 
               crisis caused by stubble burning in Northern India.
             </p>
@@ -135,25 +135,21 @@ export default function About() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member, i) => (
+{team.map((member, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-[2rem] aspect-[4/5]"
+              className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl border border-gray-200 shadow-lg hover:shadow-xl transition-all flex flex-col items-center text-center space-y-4 h-64 justify-center"
             >
-              <img 
-                src={member.image} 
-                alt={member.name} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h4 className="text-xl font-bold">{member.name}</h4>
-                <p className="text-sm opacity-80">{member.role}</p>
+              <div className="w-20 h-20 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+                <Users size={32} />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-gray-900">{member.name}</h4>
+                <p className="text-sm text-gray-500 font-medium">{member.role}</p>
               </div>
             </motion.div>
           ))}
