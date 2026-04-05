@@ -2,12 +2,7 @@ import { motion } from "motion/react";
 import { Sprout, Users, Target, Award, ShieldCheck, Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const team = [
-  { name: "Dr. Arvind Sharma", role: "Agricultural Scientist", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200" },
-  { name: "Priya Verma", role: "AI Research Lead", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" },
-  { name: "Rahul Kapoor", role: "Product Designer", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" },
-  { name: "Ananya Iyer", role: "Community Manager", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" }
-];
+
 
 const values = [
   { title: "Innovation", desc: "Pushing the boundaries of AI to solve real-world agricultural challenges.", icon: Target },
@@ -126,35 +121,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="max-w-7xl mx-auto px-4 space-y-16">
-        <div className="text-center space-y-4">
-          <h2 className="text-4xl font-bold text-gray-900">Meet the Experts</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            A diverse team of scientists, engineers, and dreamers working together.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-{team.map((member, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl border border-gray-200 shadow-lg hover:shadow-xl transition-all flex flex-col items-center text-center space-y-4 h-64 justify-center"
-            >
-              <div className="w-20 h-20 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
-                <Users size={32} />
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-gray-900">{member.name}</h4>
-                <p className="text-sm text-gray-500 font-medium">{member.role}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+
 
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-4">
